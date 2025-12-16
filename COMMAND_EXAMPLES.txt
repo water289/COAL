@@ -1,0 +1,258 @@
+COMMAND EXAMPLES AND USE CASES
+==============================
+
+YOUR EXACT REQUEST EXAMPLE:
+----------------------------
+Program:
+  store 0 in n
+  repeat 10 times if (5*n) % 2 == 0 {
+    print (5*n)
+    increment n
+  }
+
+Expected Output (if (5*n) % 2 == 0 for each n):
+  0        (n=0: 5*0=0, 0%2==0? YES, print)
+  10       (n=1: 5*1=5, 5%2==0? NO, skip)
+           (n=2: 5*2=10, 10%2==0? YES, print)
+           (n=3: 5*3=15, 15%2==0? NO, skip)
+  20       (n=4: 5*4=20, 20%2==0? YES, print)
+           ...and so on
+
+---
+
+SIMPLE COMMAND EXAMPLES:
+------------------------
+
+1. BASIC PRINT:
+   print 5
+   Output: 5
+
+2. REPEAT PRINT:
+   print 5 10 times
+   Output: 5 5 5 5 5 5 5 5 5 5 (10 times on new lines)
+
+3. CONDITIONAL PRINT:
+   store 2 in n
+   print 5 if n % 2 == 0
+   Output: 5 (because n=2, 2%2==0 is true)
+
+4. REPEAT WITH CONDITION:
+   store 0 in n
+   repeat 5 times if n < 3 {
+     print n
+     increment n
+   }
+   Output: 0 1 2
+
+5. VARIABLE IN EXPRESSION:
+   store 3 in n
+   print 5*n
+   Output: 15
+
+6. STORE WITH CONDITION:
+   store 0 in n
+   store 5*n in result if n <= 2
+   print result
+   Output: 0
+
+7. LOOP WITH BODY:
+   store 0 in n
+   repeat 3 times {
+     print n
+     increment n
+   }
+   Output: 0 1 2
+
+8. NESTED CONDITION:
+   store 5 in n
+   print n if n > 0 && n < 10
+   Output: 5
+
+9. MODULO CHECK:
+   store 7 in n
+   print "even" if n % 2 == 0
+   print "odd" if n % 2 == 1
+   Output: odd
+
+10. COMPLEX EXPRESSION:
+    store 2 in n
+    print (5*n) + 10
+    Output: 20
+
+---
+
+ALL POSSIBLE COMMAND COMBINATIONS (Recommended for Implementation):
+====================================================================
+
+GROUP 1: BASIC COMMANDS (MUST HAVE)
+------------------------------------
+1.  store <num> in <var>
+2.  store <expr> in <var>
+3.  increment <var>
+4.  decrement <var>
+5.  print <num>
+6.  print <var>
+7.  print <expr>
+8.  show <var>
+9.  help
+10. clear
+11. exit
+
+GROUP 2: REPETITION (ESSENTIAL)
+--------------------------------
+12. print <value> <N> times
+13. repeat <N> times { ... }
+14. increment <var> <N> times
+
+GROUP 3: CONDITIONS (CORE)
+---------------------------
+15. print <value> if <condition>
+16. store <expr> in <var> if <condition>
+17. increment <var> if <condition>
+18. if <condition> { ... }
+
+GROUP 4: LOOPS WITH CONDITIONS (IMPORTANT)
+-------------------------------------------
+19. repeat <N> times if <condition> { ... }
+20. repeat <N> times { ... if <condition> { ... } }
+
+GROUP 5: COMPOUND CONDITIONS (INTERMEDIATE)
+---------------------------------------------
+21. if <condition> && <condition> { ... }
+22. if <condition> || <condition> { ... }
+23. print <value> if (<expr> % <num>) == <num>
+24. repeat <N> times if <cond1> && <cond2> { ... }
+
+GROUP 6: ARITHMETIC IN LOOPS (IMPORTANT)
+-----------------------------------------
+25. repeat <N> times { print <expr>; increment <var> }
+26. repeat <N> times { store <expr> in <var>; increment <var> }
+27. repeat <N> times { print <expr>; decrement <var> }
+
+GROUP 7: CONDITIONAL OPERATORS
+-------------------------------
+28. == (equals)
+29. != (not equals)
+30. >  (greater than)
+31. <  (less than)
+32. >= (greater than or equal)
+33. <= (less than or equal)
+34. %  (modulo)
+35. && (logical AND)
+36. || (logical OR)
+
+GROUP 8: ARITHMETIC OPERATORS
+------------------------------
+37. +  (addition)
+38. -  (subtraction)
+39. *  (multiplication)
+40. /  (integer division)
+41. %  (modulo)
+42. () (parentheses)
+
+GROUP 9: ENHANCED PRINT OPERATIONS
+-----------------------------------
+43. print <expr> <N> times if <condition>
+44. print <var> <N> times if <expr> % <num> == <num>
+45. print result of <expr>
+
+GROUP 10: ASSIGNMENT VARIANTS
+------------------------------
+46. increment <var> by <num>
+47. decrement <var> by <num>
+48. add <expr> to <var>
+49. subtract <expr> from <var>
+50. multiply <var> by <num>
+51. divide <var> by <num>
+
+---
+
+IMPLEMENTATION RECOMMENDATION:
+==============================
+
+PHASE 1 (Core - Implement First):
+Commands: 1-11, 12-18, 28-34, 37-41
+Purpose: Basic variable ops, print, simple loops/conditions
+Estimated tokens: ~150,000
+
+PHASE 2 (Intermediate - Second):
+Commands: 19-27, 35-36, 43-45
+Purpose: Conditional loops, compound conditions, complex prints
+Estimated tokens: ~80,000
+
+PHASE 3 (Advanced - Optional):
+Commands: 46-51
+Purpose: Extended arithmetic assignments
+Estimated tokens: ~30,000
+
+TOTAL ESTIMATED COMMANDS: 51 unique command patterns
+
+---
+
+WHAT I RECOMMEND YOU IMPLEMENT:
+================================
+
+✓ MUST HAVE (Non-negotiable):
+  - Variable storage with conditions
+  - Print with repetition
+  - Repeat loops with conditions
+  - All comparison operators (==, !=, >, <, >=, <=, %)
+  - Compound conditions (&&, ||)
+  - Arithmetic expressions (+, -, *, /, %)
+  - Basic if-else
+  - Increment/decrement
+
+✓ SHOULD HAVE (Very useful):
+  - Conditional printing (print if)
+  - Conditional storage (store if)
+  - Loop bodies with multiple statements
+  - Expression evaluation in all contexts
+  - Parentheses for precedence
+
+✓ NICE TO HAVE (Polish features):
+  - Increment/decrement by value
+  - Arithmetic assignments (add to, multiply by)
+  - Better error messages
+  - Debug commands
+
+---
+
+MY ANALYSIS & SUGGESTIONS:
+==========================
+
+1. SCOPING: Keep it simple - global variables only (no local scope)
+
+2. TYPES: Only integers (no floats) for simplicity
+
+3. EXPRESSION EVALUATION:
+   - Support full arithmetic: a*b + c - d / e % f
+   - Use standard precedence: *, / before +, -
+   - Support parentheses: (a + b) * c
+
+4. CONDITION SYNTAX:
+   - Binary comparisons: a == b, a > b, etc.
+   - Compound: a == b && c > d
+   - Modulo checks: (expr) % num == num (very common)
+
+5. LOOP SEMANTICS:
+   - "repeat N times": fixed iteration count
+   - "repeat N times if cond": check condition at loop start
+   - Optional: evaluate condition each iteration
+
+6. STATEMENT SEPARATORS:
+   - Semicolon (;) for multi-statement lines
+   - Newline for line separation
+   - Braces {} for blocks
+
+7. ERROR HANDLING:
+   - Division by zero
+   - Undefined variables
+   - Invalid syntax
+   - Type mismatches
+
+8. OPTIMIZATION:
+   - Pre-parse to detect syntax errors
+   - Compile conditions to bytecode
+   - Cache variable lookups
+
+Ready to implement? Let me know which commands you want me to prioritize!

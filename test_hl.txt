@@ -1,0 +1,10 @@
+help
+store 0 in n
+increment n
+increment n by 5
+show n
+print 10
+print 5 3 times
+clear
+print 10
+exit

@@ -1,0 +1,7 @@
+store 5 in n
+show n
+increment n
+show n
+decrement n by 2
+show n
+exit

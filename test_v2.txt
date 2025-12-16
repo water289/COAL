@@ -1,0 +1,10 @@
+store 5 in n
+show n
+subtract 1 from n
+show n
+add 1 to n
+show n
+store 10 in x
+output x
+add 3 and 7
+exit

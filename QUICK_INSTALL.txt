@@ -1,0 +1,57 @@
+# 🚀 Quick Installation (2 Minutes)
+
+## What You Need to Do
+
+### 1. Download MASM32 (2 clicks)
+- Go to: http://www.masm32.com/download.htm
+- Download: `masm32v11r.zip`
+- Extract it
+
+### 2. Install MASM32 (1 minute)
+```cmd
+Right-click install.bat (in extracted folder)
+Run as Administrator
+Press Enter when prompted
+Wait for completion
+```
+
+### 3. Add to PATH (30 seconds)
+**Windows 10/11**:
+1. Press `Win + X` → System
+2. Advanced system settings
+3. Environment Variables button
+4. New → Variable name: `PATH`, Value: `C:\masm32\bin`
+5. OK, OK, OK
+6. **Restart your terminal**
+
+**Or use Command**:
+```cmd
+setx PATH "%PATH%;C:\masm32\bin"
+```
+
+### 4. Verify Installation
+```cmd
+where ml
+```
+Should show: `C:\masm32\bin\ml.exe`
+
+### 5. Build & Run
+```cmd
+cd d:\COAL
+build.bat
+bin\interpreter.exe
+```
+
+---
+
+## That's It! ✨
+
+Your interpreter is ready with 15 commands:
+- Arithmetic: `add`, `subtract`, `multiply`, `divide`
+- Variables: `store`, `show`, `add 1 to`
+- Output: `print`, `output`
+- Utility: `help`, `clear`, `exit`
+
+---
+
+**Full guide**: See `INSTALL_GUIDE.md` for detailed troubleshooting

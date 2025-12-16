@@ -1,0 +1,230 @@
+COMPREHENSIVE COMMAND SPECIFICATION FOR NEW SCRIPTING LANGUAGE
+================================================================
+
+ANALYSIS OF REQUESTED FEATURES:
+- Loop repetition (N times)
+- Conditional execution (if conditions)
+- Arithmetic expressions (5*n, calculations)
+- Variable storage and modification
+- Conditional logic with operators
+
+PROPOSED COMMAND CATEGORIES:
+================================
+
+1. VARIABLE OPERATIONS
+-----------------------
+store <expr> in <var>                          // Basic assignment
+store <expr> in <var> if <condition>          // Conditional assignment
+increment <var>                                 // n++
+decrement <var>                                 // n--
+increment <var> by <value>                     // n += value
+decrement <var> by <value>                     // n -= value
+
+2. LOOP STRUCTURES
+------------------
+repeat <N> times { <commands> }                // Loop N times
+repeat <N> times if <condition> { <commands> } // Conditional loop
+while <condition> { <commands> }               // While loop
+for <var> from <start> to <end> { <commands> } // For loop
+
+3. CONDITIONAL STRUCTURES
+-------------------------
+if <condition> { <commands> }                  // Single if
+if <condition> { <commands> } else { <commands> } // if-else
+execute <command> if <condition>               // Single command with condition
+
+4. OUTPUT/PRINT OPERATIONS
+---------------------------
+print <value>                                  // Print once
+print <value> <N> times                        // Print N times
+print <value> <N> times if <condition>        // Print conditionally N times
+print <expr>                                   // Print expression result
+print <expr> <N> times                         // Print expression result N times
+print <expr> <N> times if <condition>         // Print expression N times if condition
+
+5. EXPRESSION EVALUATIONS
+--------------------------
+evaluate <expr> and print                      // Evaluate and print
+evaluate <expr> and store in <var>             // Evaluate and store
+evaluate <expr> <N> times                      // Repeat evaluation N times
+output <expr>                                  // Print expression result
+
+6. CONDITIONAL OPERATORS
+------------------------
+==  (equals)
+!=  (not equals)
+>   (greater than)
+<   (less than)
+>=  (greater than or equal)
+<=  (less than or equal)
+%   (modulo - for divisibility checks)
+&&  (AND - both conditions true)
+||  (OR - either condition true)
+
+7. COMPLEX COMBINATIONS
+-----------------------
+
+A. LOOPS WITH CONDITIONS:
+   repeat N times if <condition> { print <expr> }
+   repeat N times if <condition> { store <expr> in <var> }
+   repeat N times if <condition> { increment <var> }
+
+B. NESTED CONDITIONS:
+   if <cond1> && <cond2> { print <expr> }
+   if <cond1> || <cond2> { store <expr> in <var> }
+   if (<expr1> % 2) == 0 { print <expr1> }
+
+C. LOOP WITH ACCUMULATION:
+   repeat N times { print <expr>; increment <var> }
+   repeat N times { store <expr> in <var>; increment counter }
+
+D. CONDITIONAL STORAGE:
+   store <expr> in <var> if <var> <= 5
+   store <expr> in <var> if (<expr> % 2) == 0
+   increment <var> if <condition>
+
+E. MULTI-EXPRESSION PRINTS:
+   print <expr> N times if <expr> % 2 == 0
+
+8. DATA TYPES
+--------------
+Numbers (integers)
+Expressions (arithmetic with variables)
+Conditions (boolean expressions)
+
+9. ARITHMETIC OPERATORS (in expressions)
+------------------------------------------
++  (addition)
+-  (subtraction)
+*  (multiplication)
+/  (division)
+%  (modulo)
+() (parentheses for precedence)
+
+10. EXAMPLE PROGRAMS (from your spec)
+--------------------------------------
+
+Example 1 (Your request):
+  store 0 in n
+  repeat 10 times if (5*n) % 2 == 0 {
+    print (5*n)
+    increment n
+  }
+
+Example 2 (Simple print):
+  print 5
+  print 5 10 times
+
+Example 3 (Conditional print):
+  store 0 in n
+  repeat 10 times {
+    print 5 if n % 2 == 0
+    increment n
+  }
+
+Example 4 (Complex):
+  store 0 in n
+  repeat 5 times if n <= 3 {
+    store 5*n in result
+    print result
+    increment n
+  }
+
+11. SUGGESTED ADDITIONAL FEATURES
+----------------------------------
+
+A. COMPARISON CHAINS:
+   if n > 0 && n < 10 { ... }
+   if (n % 2) == 0 || (n % 3) == 0 { ... }
+
+B. FUNCTION-LIKE STRUCTURES:
+   define square <var> as <var> * <var>
+   square n (evaluates to n*n)
+
+C. LOOP CONTROL:
+   break                  // Exit loop early
+   continue               // Skip to next iteration
+
+D. INPUT OPERATIONS:
+   input <var>           // Read from user
+   input <var> if <cond> // Conditional input
+
+E. ARRAY/LIST OPERATIONS:
+   create list <name>
+   append <value> to <list>
+   print all <list>
+
+F. ARITHMETIC ASSIGNMENTS:
+   add <expr> to <var>
+   subtract <expr> from <var>
+   multiply <var> by <expr>
+   divide <var> by <expr>
+
+G. MULTIPLE STATEMENTS PER LINE:
+   print 5; increment n; print n
+
+H. LOOP COUNTER VARIABLE:
+   repeat N times as <var> { ... }  // <var> auto-increments
+
+I. RANGE ITERATION:
+   for each <var> in range 1 to 10 { print <var> }
+
+J. DEBUGGING:
+   debug <var>           // Print variable details
+   show all variables    // List all variables
+
+12. RECOMMENDED PRIORITIES
+---------------------------
+PHASE 1 (Core - Must Have):
+  ✓ Variable storage (store X in var)
+  ✓ Basic printing (print X)
+  ✓ Increment/decrement
+  ✓ Basic loops (repeat N times)
+  ✓ Basic conditions (if, >, <, ==, %)
+  ✓ Print with loop (print X N times)
+
+PHASE 2 (Intermediate):
+  ✓ Conditional loops (repeat N times if)
+  ✓ Conditional printing (print X if condition)
+  ✓ Compound conditions (&&, ||)
+  ✓ Expression evaluation in conditions
+  ✓ Arithmetic in expressions
+
+PHASE 3 (Advanced):
+  ✓ Blocks/Braces { }
+  ✓ While loops
+  ✓ For loops with ranges
+  ✓ Nested conditions
+  ✓ Loop control (break/continue)
+
+PHASE 4 (Optional):
+  ✓ Functions/procedures
+  ✓ Arrays/Lists
+  ✓ Input operations
+  ✓ Debugging tools
+
+13. SYNTAX EXAMPLES (PHASE 1 & 2)
+----------------------------------
+
+1. store 0 in n
+2. print 5
+3. print 5 10 times
+4. print 5 if n % 2 == 0
+5. increment n
+6. decrement n
+7. repeat 10 times { print n; increment n }
+8. repeat 10 times if n < 5 { print n; increment n }
+9. print (5 * n) 10 times if (5 * n) % 2 == 0
+10. store 5 * n in result if n <= 10
+11. if n % 2 == 0 { print n }
+12. if n > 0 && n < 10 { print n }
+
+14. EXECUTION MODEL
+--------------------
+Sequential execution of commands
+Variable scope: Global
+Loop execution: Repeat block N times, evaluating conditions each time
+Condition evaluation: Left to right with precedence
+Expression evaluation: Arithmetic with standard precedence (* before +)
+
+================================================================

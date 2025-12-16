@@ -1,0 +1,88 @@
+Human Language Interpreter Test Results
+==========================================
+
+Test 1: store 0 in n
+Expected: Variable 'n' created with value 0
+Command: store 0 in n
+Result: [To be tested manually]
+
+Test 2: show n
+Expected: 0
+Command: show n
+Result: [To be tested manually]
+
+Test 3: increment n
+Expected: n becomes 1
+Command: increment n
+Result: [To be tested manually]
+
+Test 4: show n
+Expected: 1
+Command: show n
+Result: [To be tested manually]
+
+Test 5: increment n by 5
+Expected: n becomes 6
+Command: increment n by 5
+Result: [To be tested manually]
+
+Test 6: show n
+Expected: 6
+Command: show n
+Result: [To be tested manually]
+
+Test 7: print 10
+Expected: 10
+Command: print 10
+Result: [To be tested manually]
+
+Test 8: print 5 3 times
+Expected: 5, 5, 5
+Command: print 5 3 times
+Result: [To be tested manually]
+
+Test 9: store 100 in count
+Expected: Variable 'count' created with value 100
+Command: store 100 in count
+Result: [To be tested manually]
+
+Test 10: decrement count
+Expected: count becomes 99
+Command: decrement count
+Result: [To be tested manually]
+
+Test 11: show count
+Expected: 99
+Command: show count
+Result: [To be tested manually]
+
+Test 12: decrement count by 10
+Expected: count becomes 89
+Command: decrement count by 10
+Result: [To be tested manually]
+
+Test 13: show count
+Expected: 89
+Command: show count
+Result: [To be tested manually]
+
+Test 14: clear
+Expected: All variables cleared
+Command: clear
+Result: [To be tested manually]
+
+Test 15: exit
+Expected: Interpreter exits
+Command: exit
+Result: [To be tested manually]
+
+MANUAL TESTING INSTRUCTIONS:
+============================
+Due to ReadString buffering issues with piped input, these tests must be run manually:
+
+1. Run: D:\COAL\bin\interpreter_hl.exe
+2. Type each command listed above
+3. Verify the output matches the expected result
+4. Document any failures or unexpected behavior
+
+The interpreter successfully compiles and runs. Basic error handling has been verified (invalid syntax shows example).

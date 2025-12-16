@@ -1,0 +1,15 @@
+store 0 in n
+show n
+increment n
+show n
+increment n by 5
+show n
+print 10
+print 5 3 times
+store 100 in count
+decrement count
+show count
+decrement count by 10
+show count
+clear
+exit

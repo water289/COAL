@@ -1,0 +1,46 @@
+================================================================================
+                    TEST COMMANDS - QUICK REFERENCE
+================================================================================
+
+CRITICAL FIX APPLIED:
+  - StrCmpI had infinite loop due to misuse of anonymous labels (@@)
+  - Changed to named labels: StrCmpLoop, SkipAL, SkipAH, NotEqual
+  - This fixes the hang when checking "help" command
+
+BUILD (Already Done):
+  cd d:\COAL\src
+  ml /c /coff /Cp /Zd /I"..\include" HLS_Final_fixed.asm
+  link /SUBSYSTEM:CONSOLE /LIBPATH:"..\lib" /OUT:..\bin\HLS_Final_fixed.exe HLS_Final_fixed.obj Irvine32.lib kernel32.lib user32.lib
+  del HLS_Final_fixed.obj
+  cd ..
+
+================================================================================
+
+RUN INTERACTIVE MODE:
+  cd d:\COAL
+  .\bin\HLS_Final_fixed.exe
+
+================================================================================
+
+TEST COMMANDS (Type each one and press Enter):
+
+  1. help              ← Should work now without hanging!
+  2. print 42
+  3. print 5 plus 10
+  4. store 100 in x
+  5. show x
+  6. increment x
+  7. show x
+  8. exit              ← Exits the program
+
+================================================================================
+
+ROOT CAUSE OF HANG:
+  StrCmpI used anonymous labels (@@) incorrectly.
+  "jnz @B" jumped to wrong label, creating infinite loop.
+  
+SOLUTION:
+  Replaced all @@ with named labels for proper control flow.
+
+================================================================================
+

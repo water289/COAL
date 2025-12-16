@@ -1,0 +1,95 @@
+# ⚡ MASM32 Installation - 5 Minute Summary
+
+You downloaded `masm32v11.zip`. Here's exactly what to do:
+
+## 🎯 The Quick Version
+
+### 1. Extract the ZIP
+```
+1. Right-click masm32v11.zip
+2. Extract All → C:\masm32
+```
+
+### 2. Install MASM32
+```cmd
+cd C:\masm32
+install.bat
+```
+(Run as Administrator if needed)
+
+### 3. Add to PATH
+```cmd
+setx PATH "%PATH%;C:\masm32\bin"
+```
+Then close and reopen your terminal.
+
+### 4. Verify
+```cmd
+where ml
+```
+Should show: `C:\masm32\bin\ml.exe`
+
+### 5. Build & Run
+```cmd
+cd d:\COAL
+build.bat
+bin\interpreter.exe
+```
+
+**Done!** 🎉
+
+---
+
+## ❓ Quick Fixes
+
+### "ml is not recognized"
+```cmd
+setx PATH "%PATH%;C:\masm32\bin"
+```
+Close terminal, open NEW one, try again.
+
+### "Permission denied"
+Run installer as Administrator (right-click → Run as Administrator)
+
+### "install.bat not found"
+Make sure you're in `C:\masm32` folder:
+```cmd
+cd C:\masm32
+dir install.bat
+```
+
+### Build fails with "Cannot open include file"
+```cmd
+copy C:\masm32\include\Irvine32.inc d:\COAL\include\
+```
+
+---
+
+## 📍 Expected Results
+
+After each step:
+
+✅ **After extract**: `C:\masm32\` folder exists with `install.bat`
+
+✅ **After install**: No errors shown
+
+✅ **After PATH setup**: `where ml` shows `C:\masm32\bin\ml.exe`
+
+✅ **After build.bat**: Shows "Build successful!"
+
+✅ **After running exe**: Shows `>>>` prompt
+
+---
+
+## 🚀 You're Ready!
+
+Once you see the `>>>` prompt, try:
+```
+>>> help
+>>> store 10 in x
+>>> show x
+x = 10
+>>> exit
+```
+
+**See MASM32_INSTALLATION.md for detailed help** 📖

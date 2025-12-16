@@ -1,0 +1,8 @@
+help
+store 42 in x
+show x
+print The answer is
+output x
+store 100 in y
+show y
+exit

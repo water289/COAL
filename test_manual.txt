@@ -1,0 +1,59 @@
+Human Language Interpreter - Manual Test Guide
+==============================================
+
+TEST 1: Help Command
+Command: help
+Expected: Display detailed list of commands with examples
+Status: ✓ PASSED (as shown in build output)
+
+TEST 2: Unrecognized Command Error
+Command: xyz
+Expected: ERROR: Unrecognised command!
+          Type 'help' for available commands.
+Status: TO TEST
+
+TEST 3: Invalid Syntax Error
+Command: store 5
+Expected: ERROR: Invalid syntax!
+          Example: store 0 in n
+Status: TO TEST
+
+TEST 4: Store Command
+Command: store 0 in n
+Expected: Variable 'n' created
+Status: TO TEST
+
+TEST 5: Show Command
+Command: show n
+Expected: 0
+Status: TO TEST
+
+TEST 6: Increment Command
+Command: increment n
+Expected: n becomes 1
+Status: TO TEST
+
+TEST 7: Print Command
+Command: print 10
+Expected: 10
+Status: TO TEST
+
+TEST 8: Exit Command
+Command: exit
+Expected: Program exits cleanly
+Status: ✓ PASSED (program exited after help command)
+
+TESTING INSTRUCTIONS:
+====================
+Run: D:\COAL\bin\interpreter_hl.exe
+
+Then type each command above and verify the output matches expectations.
+
+KEY FEATURES IMPLEMENTED:
+========================
+✓ help - Shows detailed command list with examples
+✓ exit - Exits the program
+✓ Continuous REPL loop until 'exit' is typed
+✓ Unrecognized command error message
+✓ Invalid syntax error message with examples
+✓ Natural language commands (store, print, increment, etc.)

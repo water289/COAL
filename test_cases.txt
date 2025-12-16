@@ -1,0 +1,286 @@
+# Test Cases for Human Language Scripting Interpreter
+
+## Test Case 1: Basic Arithmetic
+```
+add 10 and 20
+subtract 5 from 15
+multiply 6 and 7
+divide 20 by 3
+```
+
+**Expected Output:**
+```
+30
+10
+42
+Quotient: 6
+Remainder: 2
+```
+
+---
+
+## Test Case 2: Variable Storage and Display
+```
+store 100 in balance
+show balance
+store 50 in amount
+show amount
+add balance and amount
+```
+
+**Expected Output:**
+```
+balance = 100
+amount = 50
+150
+```
+
+---
+
+## Test Case 3: Variable Increment
+```
+store 0 in counter
+show counter
+add 1 to counter
+show counter
+add 1 to counter
+add 1 to counter
+show counter
+```
+
+**Expected Output:**
+```
+counter = 0
+counter = 1
+counter = 3
+```
+
+---
+
+## Test Case 4: Division by Zero (Error Handling)
+```
+divide 10 by 0
+```
+
+**Expected Output:**
+```
+Error: Division by zero
+```
+
+---
+
+## Test Case 5: Undefined Variable (Error Handling)
+```
+show undefined_var
+```
+
+**Expected Output:**
+```
+Variable not found
+```
+
+---
+
+## Test Case 6: Print Command
+```
+print Hello World
+print Welcome to the interpreter
+store 42 in answer
+print answer
+```
+
+**Expected Output:**
+```
+Hello World
+Welcome to the interpreter
+42
+```
+
+---
+
+## Test Case 7: Mixed Operations
+```
+store 5 in x
+store 10 in y
+add x and y
+subtract x from y
+multiply x and y
+divide y by x
+```
+
+**Expected Output:**
+```
+15
+5
+50
+Quotient: 2
+Remainder: 0
+```
+
+---
+
+## Test Case 8: Comments
+```
+# This is a comment
+store 1 in test
+# Another comment
+show test
+```
+
+**Expected Output:**
+```
+test = 1
+```
+
+---
+
+## Test Case 9: Case Insensitivity
+```
+STORE 99 in MYVAR
+Show MyVar
+SHOW myvar
+```
+
+**Expected Output:**
+```
+myvar = 99
+myvar = 99
+```
+
+---
+
+## Test Case 10: Help Command
+```
+help
+```
+
+**Expected Output:**
+```
+Commands:
+  print <text>          - Display text or variable
+  output <expr>         - Display expression result
+  add <expr> and <expr> - Add two values
+  subtract <expr> from <expr>
+  multiply <expr> and <expr>
+  divide <expr> by <expr>
+  store <expr> in <var> - Assign variable
+  show <var>            - Display variable
+  add 1 to <var>        - Increment variable
+  clear                 - Clear screen
+  help                  - Show this help
+  exit / quit           - Exit interpreter
+  # comment             - Line comment
+```
+
+---
+
+## Test Case 11: Clear Screen
+```
+clear
+```
+
+**Expected Output:**
+```
+(Screen clears)
+```
+
+---
+
+## Test Case 12: Negative Numbers
+```
+store -10 in negative
+show negative
+add negative and 20
+subtract negative from 5
+```
+
+**Expected Output:**
+```
+negative = -10
+10
+15
+```
+
+---
+
+## Test Case 13: Large Numbers
+```
+store 1000000 in big
+show big
+add big and big
+```
+
+**Expected Output:**
+```
+big = 1000000
+2000000
+```
+
+---
+
+## Test Case 14: Empty Lines and Whitespace
+```
+   
+   store 5 in x   
+   
+   show x   
+```
+
+**Expected Output:**
+```
+x = 5
+```
+
+---
+
+## Test Case 15: Exit Command
+```
+exit
+```
+
+**Expected Output:**
+```
+Goodbye!
+```
+
+---
+
+## Integration Test Session
+
+Complete interactive session demonstrating multiple features:
+
+```
+>>> # Calculator demo
+>>> store 100 in total
+>>> show total
+total = 100
+>>> subtract 25 from total
+75
+>>> store 75 in total
+>>> add 1 to total
+>>> show total
+total = 76
+>>> multiply total and 2
+152
+>>> # Test division
+>>> divide 100 by 7
+Quotient: 14
+Remainder: 2
+>>> print Thank you for using the interpreter
+Thank you for using the interpreter
+>>> exit
+Goodbye!
+```
+
+---
+
+## Notes
+
+1. All commands are case-insensitive
+2. Variable names are case-insensitive  
+3. Comments (lines starting with #) are ignored
+4. Empty lines are ignored
+5. Whitespace is flexible
+6. Variables auto-create on first `store`
+7. Attempting to use undefined variables shows error
+8. Division by zero is handled gracefully

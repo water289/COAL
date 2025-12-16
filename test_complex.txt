@@ -1,0 +1,4 @@
+store 1 in n
+print 5 multiply by n if 5 modulus n equals 0 and increment n , loop 10 times
+show n
+exit

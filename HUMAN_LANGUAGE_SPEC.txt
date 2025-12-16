@@ -1,0 +1,510 @@
+HUMAN LANGUAGE SCRIPTING INTERPRETER
+=====================================
+
+SYNTAX: Natural Language Commands (One Command Per Line)
+
+---
+
+BASIC COMMAND SYNTAX:
+=====================
+
+VARIABLES:
+----------
+store <value> in <var>
+store <value> equals <var>
+
+Examples:
+  store 5 in n
+  store 0 equals count
+
+PRINTING:
+---------
+print <value>
+print <value> <N> times
+print <value> <N> times if <condition>
+
+Examples:
+  print 5
+  print 10 3 times
+  print n if n greater than 0
+
+ARITHMETIC OPERATORS (As Text):
+--------------------------------
+plus      (addition)
+minus     (subtraction)
+multiply  (multiplication)
+divided by (division)
+modulus    (remainder)
+
+COMPARISON OPERATORS (As Text):
+--------------------------------
+equals              (==)
+not equals          (!=)
+greater than        (>)
+less than           (<)
+greater than or equals  (>=)
+less than or equals     (<=)
+
+LOGICAL OPERATORS:
+------------------
+and       (&&)
+or        (||)
+
+VARIABLE OPERATIONS:
+--------------------
+increment <var>
+increment <var> by <value>
+increment <var> if <condition>
+
+decrement <var>
+decrement <var> by <value>
+decrement <var> if <condition>
+
+LOOPS:
+------
+repeat <N> times { ... }
+repeat <N> times if <condition> { ... }
+
+CONDITIONALS:
+--------------
+if <condition> { ... }
+
+UTILITY:
+--------
+show <var>
+clear
+help
+exit
+
+---
+
+DETAILED SYNTAX EXAMPLES:
+=========================
+
+SINGLE LINE COMMANDS:
+---------------------
+
+1. Store a number:
+   store 5 in n
+
+2. Store an expression:
+   store 5 multiply by n in result
+
+3. Print a value:
+   print 5
+
+4. Print a variable:
+   print n
+
+5. Print an expression:
+   print 5 multiply by n
+
+6. Print with repetition:
+   print hello 3 times
+
+7. Print with condition:
+   print n if n greater than 0
+
+8. Print expression with condition:
+   print 5 multiply by n if n equals 2
+
+9. Print with repetition and condition:
+   print 5 multiply by n 10 times if n less than 5
+
+10. Increment:
+    increment n
+
+11. Increment with condition:
+    increment n if n less than 10
+
+12. Decrement:
+    decrement count
+
+13. Decrement by amount:
+    decrement count by 2
+
+14. Show variable value:
+    show n
+
+---
+
+MULTI-LINE COMMANDS (WITH BLOCKS):
+===================================
+
+LOOP SYNTAX:
+-----------
+
+1. Simple loop (repeat N times):
+   repeat 5 times {
+     print hello
+     increment count
+   }
+
+2. Loop with condition (check at start):
+   repeat 10 times if n less than 5 {
+     print n
+     increment n
+   }
+
+3. Conditional block:
+   if n greater than 0 {
+     print positive
+   }
+
+4. Compound conditions (and):
+   if n greater than 0 and n less than 10 {
+     print n is between 0 and 10
+   }
+
+5. Compound conditions (or):
+   if n equals 0 or n equals 1 {
+     print special
+   }
+
+---
+
+YOUR EXACT EXAMPLE (Converted to Human Language):
+==================================================
+
+ORIGINAL REQUEST:
+  repeat 10 times if (5*n) % 2 == 0 {
+    print (5*n)
+    increment n
+  }
+
+HUMAN LANGUAGE VERSION:
+  store 0 in n
+  repeat 10 times if 5 multiply by n modulus 2 equals 0 {
+    print 5 multiply by n
+    increment n
+  }
+
+Expected Output: 0, 10, 20, 30, 40
+
+
+COMPLETE PROGRAM EXAMPLE:
+==========================
+
+Program 1: Print Numbers 1-5
+----------------------------
+store 0 in n
+repeat 5 times {
+  increment n
+  print n
+}
+
+Output: 1 2 3 4 5
+
+
+Program 2: Even Numbers 0-10
+-----------------------------
+store 0 in n
+repeat 10 times {
+  if n modulus 2 equals 0 {
+    print n
+  }
+  increment n
+}
+
+Output: 0 2 4 6 8 10
+
+
+Program 3: Sum and Print
+------------------------
+store 0 in sum
+store 0 in n
+repeat 5 times {
+  increment n
+  store sum plus n in sum
+  print current sum is sum
+}
+
+Output:
+current sum is 1
+current sum is 3
+current sum is 6
+current sum is 10
+current sum is 15
+
+
+Program 4: Conditional Loop
+----------------------------
+store 0 in n
+repeat 20 times if n less than 10 {
+  print n
+  increment n
+}
+
+Output: 0 1 2 3 4 5 6 7 8 9
+
+
+Program 5: Multiplication Table
+--------------------------------
+store 1 in num
+repeat 10 times {
+  store 1 in multiplier
+  repeat 10 times {
+    print num multiply by multiplier
+    increment multiplier
+  }
+  increment num
+}
+
+Output: (Multiplication table 1x1 through 10x10)
+
+
+Program 6: Complex Condition
+-----------------------------
+store 0 in n
+repeat 30 times {
+  if n greater than 0 and n less than 20 and n modulus 3 equals 0 {
+    print n
+  }
+  increment n
+}
+
+Output: 3 6 9 12 15 18
+
+
+---
+
+COMMAND GROUPS:
+================
+
+GROUP 1: BASIC STORAGE (Must Have)
+----------------------------------
+store <num> in <var>
+store <expression> in <var>
+show <var>
+clear
+
+
+GROUP 2: BASIC PRINTING (Must Have)
+-----------------------------------
+print <num>
+print <var>
+print <expression>
+print <text>
+
+
+GROUP 3: ARITHMETIC (Must Have)
+-------------------------------
+plus
+minus
+multiply
+divided by
+modulus
+
+
+GROUP 4: COMPARISONS (Must Have)
+-------------------------------
+equals
+not equals
+greater than
+less than
+greater than or equals
+less than or equals
+
+
+GROUP 5: REPETITION (Essential)
+-------------------------------
+print <value> <N> times
+print <value> <N> times if <condition>
+repeat <N> times { ... }
+repeat <N> times if <condition> { ... }
+
+
+GROUP 6: MODIFICATION (Essential)
+---------------------------------
+increment <var>
+increment <var> by <value>
+increment <var> if <condition>
+decrement <var>
+decrement <var> by <value>
+decrement <var> if <condition>
+
+
+GROUP 7: CONDITIONS (Core)
+-------------------------
+if <condition> { ... }
+if <condition> and <condition> { ... }
+if <condition> or <condition> { ... }
+
+
+GROUP 8: LOGIC (Important)
+-------------------------
+and
+or
+
+
+GROUP 9: UTILITY (Necessary)
+---------------------------
+help
+exit
+quit
+
+
+---
+
+RECOMMENDED IMPLEMENTATION PHASES:
+===================================
+
+PHASE 1 (Core Functionality):
+-----------------------------
+✓ store <num> in <var>
+✓ store <expr> in <var>
+✓ print <num>
+✓ print <var>
+✓ print <expr>
+✓ increment <var>
+✓ decrement <var>
+✓ repeat <N> times { ... }
+✓ if <condition> { ... }
+✓ Operators: equals, not equals, greater than, less than, greater than or equals, less than or equals
+✓ Arithmetic: plus, minus, multiply, divided by, modulus
+✓ Logic: and, or
+✓ show <var>
+✓ clear
+✓ help
+✓ exit
+
+
+PHASE 2 (Advanced Loops):
+-------------------------
+✓ print <value> <N> times
+✓ print <value> <N> times if <condition>
+✓ repeat <N> times if <condition> { ... }
+✓ increment <var> by <value>
+✓ increment <var> if <condition>
+✓ decrement <var> by <value>
+✓ decrement <var> if <condition>
+
+
+PHASE 3 (Optional Enhancements):
+--------------------------------
+✓ String printing with variables mixed in
+✓ Better error messages
+✓ Multiple conditions in one statement
+
+
+---
+
+KEY FEATURES:
+==============
+
+1. NATURAL LANGUAGE SYNTAX
+   - No symbols (no ==, >, %, etc.)
+   - Use English words (equals, greater than, modulus)
+   - Readable and learner-friendly
+
+2. SINGLE LINE COMMANDS
+   - One command per line
+   - Multiple values in one expression (5 multiply by n modulus 2)
+   - Clear progression from simple to complex
+
+3. BLOCK COMMANDS
+   - Loops and conditions use { } for body
+   - Nested loops/conditions fully supported
+   - Clear indentation for readability
+
+4. EXPRESSION EVALUATION
+   - Full arithmetic support (a plus b minus c multiply by d)
+   - Correct operator precedence (multiply before plus)
+   - Variable substitution throughout
+
+5. CONDITION SUPPORT
+   - Binary comparisons (n equals 5, x greater than y)
+   - Compound conditions (and, or)
+   - Conditional statements and loops
+
+6. VARIABLE OPERATIONS
+   - Simple storage (store 5 in n)
+   - Expression storage (store 5 multiply by n in result)
+   - Increment/decrement with conditions
+
+7. OUTPUT FLEXIBILITY
+   - Basic printing (print value)
+   - Repeated printing (print value N times)
+   - Conditional printing (print value if condition)
+   - Combined (print value N times if condition)
+
+---
+
+EXAMPLE CONVERSATION WITH INTERPRETER:
+========================================
+
+User enters program:
+  store 0 in counter
+  repeat 3 times {
+    print counter
+    increment counter
+  }
+
+Interpreter output:
+  0
+  1
+  2
+
+User enters:
+  print hello 5 times
+
+Interpreter output:
+  hello
+  hello
+  hello
+  hello
+  hello
+
+User enters:
+  store 10 in n
+  if n greater than 5 {
+    print n is greater than 5
+  }
+
+Interpreter output:
+  n is greater than 5
+
+---
+
+IMPLEMENTATION NOTES:
+======================
+
+1. TOKENIZATION:
+   - Split input by spaces
+   - Recognize multi-word operators (greater than, less than, not equals, etc.)
+   - Handle braces { } separately
+
+2. PARSING:
+   - Identify command type (store, print, repeat, if, etc.)
+   - Extract parameters and conditions
+   - Validate syntax
+
+3. EXECUTION:
+   - Evaluate expressions with proper precedence
+   - Execute loops and conditions
+   - Manage variables (global scope)
+
+4. OPERATOR PRECEDENCE (important):
+   - multiply, divided by, modulus (highest)
+   - plus, minus (lower)
+   - Parentheses for override (NOT IMPLEMENTED - nice to have)
+
+5. VARIABLE LIMITS:
+   - Max 64 variables
+   - Each variable name max 20 characters
+   - Each value max 32-bit integer (-2 billion to +2 billion)
+
+---
+
+READY FOR IMPLEMENTATION?
+===========================
+
+Current Status: Specification complete and ready
+
+What I need from you:
+1. Confirm you want this natural language syntax
+2. Specify which phases to implement (Phase 1 minimum, Phase 2 recommended)
+3. Any syntax modifications you prefer
+4. Then I'll build the interpreter from scratch!
+
+This will be a completely fresh implementation, separate from v1.0 and v2.0.
