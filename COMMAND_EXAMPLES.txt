@@ -5,8 +5,11 @@ YOUR EXACT REQUEST EXAMPLE:
 ----------------------------
 Program:
   store 0 in n
-  repeat 10 times if (5*n) % 2 == 0 {
+  repeat 10 times {
+    if (5*n) % 2 == 0
+    {
     print (5*n)
+    }
     increment n
   }
 
@@ -118,8 +121,8 @@ GROUP 4: LOOPS WITH CONDITIONS (IMPORTANT)
 
 GROUP 5: COMPOUND CONDITIONS (INTERMEDIATE)
 ---------------------------------------------
-21. if <condition> && <condition> { ... }
-22. if <condition> || <condition> { ... }
+21. if <condition> and <condition> { ... }
+22. if <condition> or <condition> { ... }
 23. print <value> if (<expr> % <num>) == <num>
 24. repeat <N> times if <cond1> && <cond2> { ... }
 

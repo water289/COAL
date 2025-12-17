@@ -1,0 +1,6 @@
+store 5 in x
+show x
+calculate x - 2
+calculate 2 - 2
+calculate x-2
+exit

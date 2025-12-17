@@ -24,15 +24,15 @@ if exist bin\interpreter.exe del bin\interpreter.exe
 cd src
 
 REM Assemble the interpreter
-ml /c /coff /Cp /Zd /I"..\include" interpreter.asm
+ml /c /coff /Cp /Zd /I"..\include" interpreter_incremental.asm
 if errorlevel 1 goto error
 
 REM Link the interpreter
-link /SUBSYSTEM:CONSOLE /LIBPATH:"..\lib" /OUT:..\bin\interpreter.exe interpreter.obj Irvine32.lib kernel32.lib user32.lib
+link /SUBSYSTEM:CONSOLE /LIBPATH:"..\lib" /OUT:..\bin\interpreter.exe interpreter_incremental.obj Irvine32.lib kernel32.lib user32.lib
 if errorlevel 1 goto error
 
 REM Clean up object files
-del interpreter.obj
+del interpreter_incremental.obj
 
 cd ..
 
